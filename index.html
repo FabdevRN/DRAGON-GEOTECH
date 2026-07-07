@@ -1,12 +1,3 @@
-To get you to that **10/10**, we need to address the "jitter" that happens on mobile browsers during the bounce/overscroll effect.
-
-The reason your header occasionally misbehaved is that mobile browsers treat negative scroll values (when you pull the page down to refresh) as legitimate scroll updates.
-
-**The 10/10 Fix:** I have added a **scroll threshold (buffer zone)** to the JavaScript. The header will now only attempt to hide once you have scrolled down **50 pixels**. This creates a "safety zone" at the top of your page—the header will never disappear when you are near the top, which eliminates the jitter completely.
-
-Here is your **complete, full-length, unminified code**:
-
-```html
 <!DOCTYPE html>
 <html lang="id-ID">
 <head>
