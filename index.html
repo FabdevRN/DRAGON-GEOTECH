@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dragon Geotech - Foundation of Strength</title>
     
-    <!-- Google Fonts: Manrope -->
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         /* --- RESET & BASE STYLES --- */
@@ -16,7 +17,6 @@
             --cool-white: #F7FAFC;
             --accent-orange: #DD6B20;
             --text-dark: #2D3748;
-            /* Manrope added to the font stack below */
             --font-stack: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
@@ -104,7 +104,7 @@
         .nav-links a {
             text-decoration: none;
             color: var(--slate-gray);
-            font-weight: 600; /* Increased weight slightly for Manrope legibility */
+            font-weight: 600;
             transition: color 0.3s ease;
             cursor: pointer;
         }
@@ -155,7 +155,7 @@
             border: none;
             border-radius: 4px;
             font-size: 1.1rem;
-            font-weight: 700; /* Increased weight for buttons */
+            font-weight: 700;
             cursor: pointer;
             text-decoration: none;
             transition: background-color 0.3s ease;
@@ -249,16 +249,13 @@
         #page-content > div.active {
             display: block;
         }
-
     </style>
 </head>
 <body>
 
-    <!-- HEADER & NAVIGATION -->
     <header>
         <div class="container">
             <nav>
-                <!-- LOGO & BRANDING (References Gemini_Generated_Image_aqdw1zaqdw1zaqdw (1) (1).png) -->
                 <a onclick="showPage('home')" class="logo-container">
                     <img src="Gemini_Generated_Image_aqdw1zaqdw1zaqdw (1) (1).png" alt="Dragon Geotech Logo" class="logo-img">
                     <span class="company-name">DRAGON GEOTECH</span>
@@ -275,10 +272,8 @@
         </div>
     </header>
 
-    <!-- MAIN CONTENT AREA -->
     <main id="page-content">
 
-        <!-- HOMEPAGE VIEW -->
         <div id="page-home" class="active">
             <section class="hero section-padding">
                 <div class="container">
@@ -302,7 +297,6 @@
             </section>
         </div>
 
-        <!-- ABOUT US VIEW -->
         <div id="page-about">
             <section class="about-section section-padding">
                 <div class="container">
@@ -324,7 +318,6 @@
             </section>
         </div>
 
-        <!-- SERVICES VIEW -->
         <div id="page-services">
             <section class="services-section section-padding">
                 <div class="container">
@@ -336,18 +329,22 @@
 
                     <div class="services-grid">
                         <div class="service-card">
+                            <i class="fa-solid fa-mountain" style="font-size: 2rem; color: var(--accent-orange); margin-bottom: 15px; display: block;"></i>
                             <h3>Penyelidikan Tanah (Field Work)</h3>
                             <p>Pengeboran, Sondir (CPT), SPT, dan pemantauan air tanah untuk data akurat. / <strong>Drilling, CPT, SPT, and groundwater monitoring for accurate data.</strong></p>
                         </div>
                         <div class="service-card">
+                            <i class="fa-solid fa-flask" style="font-size: 2rem; color: var(--accent-orange); margin-bottom: 15px; display: block;"></i>
                             <h3>Pengujian Laboratorium (Laboratory)</h3>
                             <p>Klasifikasi tanah, uji pemadatan, kekuatan, dan permeabilitas berbasis sains. / <strong>Science-based soil classification, compaction, strength, and permeability testing.</strong></p>
                         </div>
                         <div class="service-card">
+                            <i class="fa-solid fa-compass-drafting" style="font-size: 2rem; color: var(--accent-orange); margin-bottom: 15px; display: block;"></i>
                             <h3>Analisis & Desain (Engineering)</h3>
                             <p>Rekomendasi fondasi, stabilitas lereng, analisis penurunan, dan dinding penahan tanah. / <strong>Foundation recommendations, slope stability, settlement analysis, and retaining wall design.</strong></p>
                         </div>
                         <div class="service-card">
+                            <i class="fa-solid fa-users-gear" style="font-size: 2rem; color: var(--accent-orange); margin-bottom: 15px; display: block;"></i>
                             <h3>Dukungan Konstruksi (Construction)</h3>
                             <p>Pengujian beban tiang, pemantauan ekskavasi, dan inspeksi pekerjaan tanah secara intensif. / <strong>Pile load testing, excavation monitoring, and intensive earthwork inspection.</strong></p>
                         </div>
@@ -356,7 +353,6 @@
             </section>
         </div>
 
-        <!-- CONTACT / INQUIRY VIEW -->
         <div id="page-contact">
             <section class="contact-section section-padding">
                 <div class="container">
@@ -382,7 +378,6 @@
 
     </main>
 
-    <!-- FOOTER -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -395,7 +390,6 @@
         </div>
     </footer>
 
-    <!-- PURE VANILLA JAVASCRIPT FOR PAGE NAVIGATION -->
     <script>
         function showPage(pageId) {
             const pages = ['home', 'about', 'services', 'contact'];
