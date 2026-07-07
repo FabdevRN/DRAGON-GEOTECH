@@ -34,6 +34,7 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            padding-top: 100px; /* Compensate for fixed header */
         }
 
         h1, h2 { color: var(--deep-navy); margin-bottom: 1rem; }
@@ -58,9 +59,15 @@
             background-color: var(--cool-white);
             padding: 20px 0;
             border-bottom: 1px solid #e2e8f0;
-            position: sticky;
+            position: fixed;
             top: 0;
+            width: 100%;
             z-index: 1000;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .header-hidden {
+            transform: translateY(-100%);
         }
 
         nav {
@@ -123,6 +130,9 @@
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 15px;
+            }
+            body {
+                padding-top: 140px; /* More padding on mobile if header stacks */
             }
         }
 
@@ -267,7 +277,7 @@
 </head>
 <body>
 
-    <header>
+    <header id="main-header">
         <div class="container">
             <nav>
                 <a onclick="showPage('home')" class="logo-container">
@@ -424,6 +434,23 @@
 
             window.scrollTo(0, 0);
         }
+
+        // Header Scroll Logic
+        let lastScrollTop = 0;
+        const header = document.getElementById('main-header');
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down - hide header
+                header.classList.add('header-hidden');
+            } else {
+                // Scrolling up - show header
+                header.classList.remove('header-hidden');
+            }
+            lastScrollTop = scrollTop;
+        });
     </script>
 </body>
 </html>
