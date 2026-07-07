@@ -1,6 +1,3 @@
-Here is the updated, complete code. I have replaced your previous Services section with the new grid layout and integrated the FontAwesome icon library.
-
-```html
 <!DOCTYPE html>
 <html lang="id-ID">
 <head>
@@ -12,56 +9,56 @@ Here is the updated, complete code. I have replaced your previous Services secti
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* --- RESET & BASE STYLES --- */
         :root {
             --deep-navy: #1A2A6C;
             --slate-gray: #4A5568;
             --cool-white: #F7FAFC;
             --accent-orange: #DD6B20;
             --text-dark: #2D3748;
-            --font-stack: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --font-stack: 'Manrope', sans-serif;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: var(--font-stack); color: var(--text-dark); line-height: 1.6; background-color: var(--cool-white); display: flex; flex-direction: column; min-height: 100vh; }
-
-        h1, h2 { color: var(--deep-navy); margin-bottom: 1rem; }
-        h2 { font-size: 2.5rem; }
-        p { margin-bottom: 1.5rem; }
+        body { 
+            font-family: var(--font-stack); 
+            color: var(--text-dark); 
+            background-color: var(--cool-white); 
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
         .section-padding { padding: 80px 0; }
         .text-center { text-align: center; }
 
-        /* --- HEADER & NAV --- */
-        header { background-color: var(--cool-white); padding: 20px 0; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 1000; }
+        /* Navigation */
+        header { background: #fff; padding: 20px 0; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 1000; }
         nav { display: flex; justify-content: space-between; align-items: center; }
-        .logo-container { display: flex; flex-direction: column; align-items: center; text-decoration: none; cursor: pointer; }
-        .logo-img { max-height: 60px; width: auto; margin-bottom: 5px; }
-        .company-name { font-weight: bold; font-size: 1.2rem; color: var(--deep-navy); line-height: 1.1; }
+        .logo-container { cursor: pointer; text-decoration: none; display: flex; flex-direction: column; align-items: center; }
+        .company-name { font-weight: 700; color: var(--deep-navy); }
         .tagline { font-size: 0.75rem; color: var(--slate-gray); }
         .nav-links { list-style: none; display: flex; gap: 25px; }
-        .nav-links a { text-decoration: none; color: var(--slate-gray); font-weight: 600; transition: color 0.3s ease; cursor: pointer; }
+        .nav-links a { cursor: pointer; color: var(--slate-gray); font-weight: 600; text-decoration: none; }
         .nav-links a:hover, .nav-links a.active { color: var(--accent-orange); }
 
-        /* --- NEW SERVICES SECTION --- */
-        .services-section { background-color: var(--cool-white); }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 25px; margin-top: 50px; }
-        .service-card { background: white; padding: 40px; border-radius: 16px; border: 1px solid #e2e8f0; transition: transform 0.2s; }
-        .icon-box { width: 50px; height: 50px; background: #EDF2F7; color: var(--deep-navy); display: flex; align-items: center; justify-content: center; border-radius: 10px; font-size: 1.5rem; margin-bottom: 20px; }
-        .service-card h3 { color: #1A202C; margin-bottom: 20px; }
-        .feature-list { list-style: none; margin-bottom: 20px; }
-        .feature-list li { margin-bottom: 10px; display: flex; align-items: flex-start; color: var(--slate-gray); }
-        .feature-list li i { color: var(--deep-navy); margin-right: 10px; margin-top: 4px; }
-        .learn-more { color: var(--deep-navy); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
-
-        /* --- OTHER SECTIONS --- */
-        .hero { background-color: var(--deep-navy); color: var(--cool-white); text-align: center; padding: 120px 20px; }
-        .btn { background-color: var(--accent-orange); color: white; padding: 15px 30px; border-radius: 4px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block; }
-        
+        /* Main Content Views */
         #page-content > div { display: none; }
         #page-content > div.active { display: block; }
-        footer { background-color: var(--deep-navy); color: var(--cool-white); padding: 40px 0; margin-top: auto; }
+
+        /* Hero & Sections */
+        .hero { background-color: var(--deep-navy); color: var(--cool-white); text-align: center; padding: 120px 20px; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .btn { background: var(--accent-orange); color: white; padding: 15px 30px; border-radius: 4px; display: inline-block; text-decoration: none; font-weight: 700; margin-top: 20px; cursor: pointer; }
+
+        /* Services Grid */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
+        .service-card { background: white; padding: 30px; border-radius: 8px; border: 1px solid #e2e8f0; }
+        .service-card h3 { color: var(--deep-navy); margin-bottom: 10px; }
+
+        /* Footer */
+        footer { background-color: var(--deep-navy); color: white; padding: 40px 0; margin-top: auto; text-align: center; }
     </style>
 </head>
 <body>
@@ -70,7 +67,6 @@ Here is the updated, complete code. I have replaced your previous Services secti
         <div class="container">
             <nav>
                 <a onclick="showPage('home')" class="logo-container">
-                    <img src="Gemini_Generated_Image_aqdw1zaqdw1zaqdw (1) (1).png" alt="Dragon Geotech Logo" class="logo-img">
                     <span class="company-name">DRAGON GEOTECH</span>
                     <span class="tagline">FOUNDATION OF STRENGTH</span>
                 </a>
@@ -89,67 +85,40 @@ Here is the updated, complete code. I have replaced your previous Services secti
             <section class="hero">
                 <div class="container">
                     <h1>Ahli Solusi Geoteknik Anda</h1>
-                    <a onclick="showPage('services')" class="btn">Pelajari Lebih Lanjut</a>
+                    <p>Penyelidikan tanah presisi untuk fondasi yang kokoh.</p>
+                    <a onclick="showPage('services')" class="btn">Pelajari Layanan</a>
                 </div>
+            </section>
+        </div>
+
+        <div id="page-about">
+            <section class="section-padding container">
+                <h2>Tentang Kami</h2>
+                <p>Dragon Geotech adalah mitra terpercaya dalam solusi geoteknik...</p>
             </section>
         </div>
 
         <div id="page-services">
-            <section class="services-section section-padding">
-                <div class="container">
-                    <h2 class="text-center">Keahlian Kami</h2>
-                    <div class="services-grid">
-                        
-                        <div class="service-card">
-                            <div class="icon-box"><i class="fa-solid fa-mountain"></i></div>
-                            <h3>Site Investigation & Field Testing</h3>
-                            <ul class="feature-list">
-                                <li><i class="fa-regular fa-circle-check"></i> Soil Boring & Drilling</li>
-                                <li><i class="fa-regular fa-circle-check"></i> Cone Penetration Testing (CPT/Sondir)</li>
-                                <li><i class="fa-regular fa-circle-check"></i> Standard Penetration Testing (SPT)</li>
-                                <li><i class="fa-regular fa-circle-check"></i> Groundwater Monitoring</li>
-                            </ul>
-                            <a href="#" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-
-                        <div class="service-card">
-                            <div class="icon-box"><i class="fa-solid fa-flask"></i></div>
-                            <h3>Laboratory Testing</h3>
-                            <ul class="feature-list">
-                                <li><i class="fa-regular fa-circle-check"></i> Soil Classification</li>
-                                <li><i class="fa-regular fa-circle-check"></i> Compaction & Strength Testing</li>
-                                <li><i class="fa-regular fa-circle-check"></i> Permeability Testing</li>
-                            </ul>
-                            <a href="#" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-
-                        <div class="service-card">
-                            <div class="icon-box"><i class="fa-solid fa-compass-drafting"></i></div>
-                            <h3>Geotechnical Analysis & Design</h3>
-                            <ul class="feature-list">
-                                <li><i class="fa-regular fa-circle-check"></i> Foundation Design Recommendations</li>
-                                <li><i class="fa-regular fa-circle-check"></i> Slope Stability Analysis</li>
-                                <li><i class="fa-regular fa-circle-check"></i> Settlement Analysis</li>
-                                <li><i class="fa-regular fa-circle-check"></i> Retaining Wall Design</li>
-                            </ul>
-                            <a href="#" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-
-                        <div class="service-card">
-                            <div class="icon-box"><i class="fa-solid fa-users-gear"></i></div>
-                            <h3>Construction Support & Inspection</h3>
-                            <ul class="feature-list">
-                                <li><i class="fa-regular fa-circle-check"></i> Pile Load Testing</li>
-                                <li><i class="fa-regular fa-circle-check"></i> Excavation Monitoring</li>
-                                <li><i class="fa-regular fa-circle-check"></i> Earthwork Inspection</li>
-                            </ul>
-                            <a href="#" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
+            <section class="section-padding container">
+                <h2>Keahlian Kami</h2>
+                <div class="services-grid">
+                    <div class="service-card"><h3>Penyelidikan Tanah</h3><p>Pengeboran & CPT.</p></div>
+                    <div class="service-card"><h3>Laboratorium</h3><p>Uji kekuatan tanah.</p></div>
                 </div>
             </section>
         </div>
+
+        <div id="page-contact">
+            <section class="section-padding container text-center">
+                <h2>Hubungi Kami</h2>
+                <a href="https://tally.so/r/eqPoMJ" class="btn">Buka Formulir</a>
+            </section>
+        </div>
     </main>
+
+    <footer>
+        <div class="container">&copy; 2026 Dragon Geotech. All rights reserved.</div>
+    </footer>
 
     <script>
         function showPage(pageId) {
@@ -162,5 +131,3 @@ Here is the updated, complete code. I have replaced your previous Services secti
     </script>
 </body>
 </html>
-
-```
