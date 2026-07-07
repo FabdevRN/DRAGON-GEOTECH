@@ -113,6 +113,19 @@
             color: var(--accent-orange);
         }
 
+        /* --- RESPONSIVE HEADER FIX --- */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+        }
+
         /* --- FOOTER --- */
         footer {
             background-color: var(--deep-navy);
