@@ -1,515 +1,421 @@
 <!DOCTYPE html>
 <html lang="id-ID">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dragon Geotech - Foundation of Strength</title>
-    
-    <!-- Google Fonts: Manrope -->
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        /* --- RESET & BASE STYLES --- */
-        :root {
-            --deep-navy: #1A2A6C;
-            --slate-gray: #4A5568;
-            --cool-white: #F7FAFC;
-            --accent-orange: #DD6B20;
-            --text-dark: #2D3748;
-            --font-stack: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Geotech - Foundation of Strength</title>
+    
+    <!-- Google Fonts: Manrope -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- RESET & BASE STYLES --- */
+        :root {
+            --deep-navy: #1A2A6C;
+            --slate-gray: #4A5568;
+            --cool-white: #F7FAFC;
+            --accent-orange: #DD6B20;
+            --text-dark: #2D3748;
+            /* Manrope added to the font stack below */
+            --font-stack: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-body { font-family: var(--font-stack); color: var(--text-dark); background-color: var(--cool-white); }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-        /* --- NEW SERVICE CARD STYLES --- */
-        .services-container { max-width: 1000px; margin: 0 auto; padding: 80px 20px; }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 25px;
-        }
+        body {
+            font-family: var(--font-stack);
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--cool-white);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-        .service-card {
-            background: white;
-            padding: 40px;
-            border-radius: 16px;
-            border: 1px solid #e2e8f0;
-            transition: transform 0.2s;
-        }
+        h1, h2 { color: var(--deep-navy); margin-bottom: 1rem; }
+        h2 { font-size: 2.5rem; }
+        p { margin-bottom: 1.5rem; }
 
-        .icon-box {
-            width: 50px;
-            height: 50px;
-            background: #EDF2F7;
-            color: var(--deep-navy);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
+        /* --- UTILITIES --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-        .service-card h3 { color: #1A202C; margin-bottom: 5px; }
-        .label { color: var(--accent-orange); font-weight: 700; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 20px; text-transform: uppercase; display: block;}
-        
-        .feature-list { list-style: none; margin: 20px 0; }
-        .feature-list li { margin-bottom: 10px; display: flex; align-items: flex-start; color: var(--slate-gray); }
-        .feature-list li i { color: var(--deep-navy); margin-right: 10px; margin-top: 4px; }
+        .section-padding {
+            padding: 80px 0;
+        }
 
-        .learn-more { color: var(--deep-navy); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;}
-    </style>
+        .text-center { text-align: center; }
+
+        /* --- HEADER / NAV --- */
+        header {
+            background-color: var(--cool-white);
+            padding: 20px 0;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .logo-img {
+            max-height: 60px;
+            width: auto;
+            margin-bottom: 5px;
+        }
+
+        .company-name {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--deep-navy);
+            line-height: 1.1;
+        }
+
+        .tagline {
+            font-size: 0.75rem;
+            color: var(--slate-gray);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--slate-gray);
+            font-weight: 600; /* Increased weight slightly for Manrope legibility */
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-orange);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--deep-navy);
+            color: var(--cool-white);
+            padding: 40px 0;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* --- HERO SECTION (HOMEPAGE) --- */
+        .hero {
+            background-color: var(--deep-navy);
+            color: var(--cool-white);
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--cool-white);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            opacity: 0.9;
+        }
+
+        .btn {
+            background-color: var(--accent-orange);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: 700; /* Increased weight for buttons */
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #c05621;
+        }
+
+        /* --- ABOUT US SECTION --- */
+        .about-section {
+            background-color: var(--cool-white);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .bilingual-text p {
+            margin-bottom: 1rem;
+        }
+
+        /* --- SERVICES SECTION --- */
+        .services-section {
+            background-color: var(--deep-navy);
+            color: var(--cool-white);
+        }
+
+        .services-section h2 { color: var(--cool-white); }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .service-card h3 {
+            color: var(--accent-orange);
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            margin: 0;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .service-card strong {
+             color: var(--cool-white);
+        }
+
+        /* --- CONTACT / INQUIRY SECTION --- */
+        .contact-section {
+            background-color: var(--cool-white);
+            text-align: center;
+        }
+
+        .contact-options {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 600px;
+            margin: 50px auto 0 auto;
+        }
+
+        .contact-box {
+            border: 2px solid #e2e8f0;
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .contact-box h3 { color: var(--deep-navy); }
+        .contact-box p { color: var(--slate-gray); margin-bottom: 20px;}
+
+        /* --- PAGE MANAGEMENT STYLES --- */
+        #page-content > div {
+            display: none;
+        }
+
+        #page-content > div.active {
+            display: block;
+        }
+
+    </style>
 </head>
 <body>
 
-    <section class="services-container">
-        <div class="services-grid">
-            
-            <!-- Card 1 -->
-            <div class="service-card">
-                <div class="icon-box"><i class="fa-solid fa-mountain"></i></div>
-                <h3>Site Investigation & Field Testing</h3>
-                <span class="label">THE GROUNDWORK</span>
-                <ul class="feature-list">
-                    <li><i class="fa-regular fa-circle-check"></i> Soil Boring & Drilling</li>
-                    <li><i class="fa-regular fa-circle-check"></i> Cone Penetration Testing (CPT/Sondir)</li>
-                    <li><i class="fa-regular fa-circle-check"></i> Standard Penetration Testing (SPT)</li>
-                    <li><i class="fa-regular fa-circle-check"></i> Groundwater Monitoring</li>
-                </ul>
-                <a href="#" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="container">
+            <nav>
+                <!-- LOGO & BRANDING (References Gemini_Generated_Image_aqdw1zaqdw1zaqdw (1) (1).png) -->
+                <a onclick="showPage('home')" class="logo-container">
+                    <img src="Gemini_Generated_Image_aqdw1zaqdw1zaqdw (1) (1).png" alt="Dragon Geotech Logo" class="logo-img">
+                    <span class="company-name">DRAGON GEOTECH</span>
+                    <span class="tagline">FOUNDATION OF STRENGTH</span>
+                </a>
+                
+                <ul class="nav-links">
+                    <li><a onclick="showPage('home')" id="link-home" class="active">Beranda / Home</a></li>
+                    <li><a onclick="showPage('about')" id="link-about">Tentang Kami / About Us</a></li>
+                    <li><a onclick="showPage('services')" id="link-services">Layanan / Services</a></li>
+                    <li><a onclick="showPage('contact')" id="link-contact">Hubungi Ahli / Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-            <!-- Card 2 -->
-            <div class="service-card">
-                <div class="icon-box"><i class="fa-solid fa-flask"></i></div>
-                <h3>Laboratory Testing</h3>
-                <span class="label">THE SCIENCE</span>
-                <ul class="feature-list">
-                    <li><i class="fa-regular fa-circle-check"></i> Soil Classification</li>
-                    <li><i class="fa-regular fa-circle-check"></i> Compaction & Strength Testing</li>
-                    <li><i class="fa-regular fa-circle-check"></i> Permeability Testing</li>
-                </ul>
-                <a href="#" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
+    <!-- MAIN CONTENT AREA -->
+    <main id="page-content">
 
-            <!-- Card 3 -->
-            <div class="service-card">
-                <div class="icon-box"><i class="fa-solid fa-compass-drafting"></i></div>
-                <h3>Geotechnical Analysis & Design</h3>
-                <span class="label">THE OFFICE WORK</span>
-                <ul class="feature-list">
-                    <li><i class="fa-regular fa-circle-check"></i> Foundation Design Recommendations</li>
-                    <li><i class="fa-regular fa-circle-check"></i> Slope Stability Analysis</li>
-                    <li><i class="fa-regular fa-circle-check"></i> Settlement Analysis</li>
-                    <li><i class="fa-regular fa-circle-check"></i> Retaining Wall Design</li>
-                </ul>
-                <a href="#" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
+        <!-- HOMEPAGE VIEW -->
+        <div id="page-home" class="active">
+            <section class="hero section-padding">
+                <div class="container">
+                    <h1>Ahli Solusi Geoteknik Anda</h1>
+                    <p>Dragon Geotech menyediakan penyelidikan tanah dan pengujian lapangan yang presisi untuk memastikan fondasi yang kokoh untuk proyek konstruksi Anda.</p>
+                    <a onclick="showPage('services')" class="btn">Pelajari Lebih Lanjut</a>
+                </div>
+            </section>
+            
+            <section class="about-section section-padding">
+                <div class="container">
+                    <div class="about-content">
+                        <h2>Mengapa Memilih Kami? / Why Choose Us?</h2>
+                        <div class="bilingual-text">
+                            <p><strong>Akurasi Berbasis Data:</strong> Kami menggunakan standar teknis terkini untuk hasil yang dapat diandalkan. / <strong>Data-Driven Accuracy:</strong> We utilize the latest technical standards for reliable results.</p>
+                            <p><strong>Pendekatan Ilmiah:</strong> Setiap desain didasarkan pada analisis laboratorium dan lapangan yang ketat. / <strong>Scientific Approach:</strong> Every design is based on rigorous lab and field analysis.</p>
+                            <p><strong>Keamanan Konstruksi:</strong> Kami berkomitmen penuh untuk meminimalkan risiko geoteknik di lapangan. / <strong>Construction Safety:</strong> We are fully committed to minimizing geotechnical risks on-site.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
 
-            <!-- Card 4 -->
-            <div class="service-card">
-                <div class="icon-box"><i class="fa-solid fa-users-gear"></i></div>
-                <h3>Construction Support & Inspection</h3>
-                <span class="label">THE SUPERVISION</span>
-                <ul class="feature-list">
-                    <li><i class="fa-regular fa-circle-check"></i> Pile Load Testing</li>
-                    <li><i class="fa-regular fa-circle-check"></i> Excavation Monitoring</li>
-                    <li><i class="fa-regular fa-circle-check"></i> Earthwork Inspection</li>
-        body {
-            font-family: var(--font-stack);
-            color: var(--text-dark);
-            line-height: 1.6;
-            background-color: var(--cool-white);
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+        <!-- ABOUT US VIEW -->
+        <div id="page-about">
+            <section class="about-section section-padding">
+                <div class="container">
+                    <div class="about-content">
+                        <h2>Tentang Kami / About Us</h2>
+                        <div class="bilingual-text">
+                            <p><strong>Membangun Fondasi Masa Depan yang Kokoh</strong></p>
+                            <p>Kami adalah mitra terpercaya Anda dalam solusi geoteknik yang presisi dan andal. Dengan keahlian mendalam dalam penyelidikan tanah dan pengujian lapangan, kami memastikan setiap proyek konstruksi berdiri di atas dasar yang aman, stabil, dan efisien.</p>
+                            <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+                            <p><strong>Building a Strong Foundation for the Future</strong></p>
+                            <p>We are your trusted partner in precision geotechnical solutions. With deep expertise in soil investigation and field testing, we ensure that every construction project is built on a foundation that is safe, stable, and efficient.</p>
+                            
+                            <div style="margin-top: 30px;">
+                                <a onclick="showPage('contact')" class="btn">Hubungi Ahli / Contact Expertise</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
 
-        h1, h2 { color: var(--deep-navy); margin-bottom: 1rem; }
-        h2 { font-size: 2.5rem; }
-        p { margin-bottom: 1.5rem; }
+        <!-- SERVICES VIEW -->
+        <div id="page-services">
+            <section class="services-section section-padding">
+                <div class="container">
+                    <div class="text-center">
+                        <h2>Keahlian Kami / Our Expertise</h2>
+                        <p>Kami menyediakan layanan menyeluruh yang mencakup setiap tahapan proyek Anda:</p>
+                        <p>We provide comprehensive services covering every stage of your project:</p>
+                    </div>
 
-        /* --- UTILITIES --- */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <h3>Penyelidikan Tanah (Field Work)</h3>
+                            <p>Pengeboran, Sondir (CPT), SPT, dan pemantauan air tanah untuk data akurat. / <strong>Drilling, CPT, SPT, and groundwater monitoring for accurate data.</strong></p>
+                        </div>
+                        <div class="service-card">
+                            <h3>Pengujian Laboratorium (Laboratory)</h3>
+                            <p>Klasifikasi tanah, uji pemadatan, kekuatan, dan permeabilitas berbasis sains. / <strong>Science-based soil classification, compaction, strength, and permeability testing.</strong></p>
+                        </div>
+                        <div class="service-card">
+                            <h3>Analisis & Desain (Engineering)</h3>
+                            <p>Rekomendasi fondasi, stabilitas lereng, analisis penurunan, dan dinding penahan tanah. / <strong>Foundation recommendations, slope stability, settlement analysis, and retaining wall design.</strong></p>
+                        </div>
+                        <div class="service-card">
+                            <h3>Dukungan Konstruksi (Construction)</h3>
+                            <p>Pengujian beban tiang, pemantauan ekskavasi, dan inspeksi pekerjaan tanah secara intensif. / <strong>Pile load testing, excavation monitoring, and intensive earthwork inspection.</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
 
-        .section-padding {
-            padding: 80px 0;
-        }
+        <!-- CONTACT / INQUIRY VIEW -->
+        <div id="page-contact">
+            <section class="contact-section section-padding">
+                <div class="container">
+                    <h2>Hubungi Ahli / Contact Expertise</h2>
+                    <p>Silakan isi formulir di bawah ini atau kirimkan pertanyaan langsung kepada kami.</p>
 
-        .text-center { text-align: center; }
+                    <div class="contact-options">
+                        <div class="contact-box">
+                            <h3>Formulir Permintaan Proyek</h3>
+                            <p>Beri tahu kami detail kebutuhan geoteknik Anda melalui Tally.</p>
+                            <a href="https://tally.so/r/eqPoMJ" target="_blank" class="btn">Buka Formulir Tally</a>
+                        </div>
 
-        /* --- HEADER / NAV --- */
-        header {
-            background-color: var(--cool-white);
-            padding: 20px 0;
-            border-bottom: 1px solid #e2e8f0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+                        <div class="contact-box">
+                            <h3>Kirim Email Langsung</h3>
+                            <p>Atau kirimkan pertanyaan Anda via email.</p>
+                            <a href="mailto:idhamyuwana@gmail.com" class="btn">idhamyuwana@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    </main>
 
-        .logo-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            cursor: pointer;
-        }
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo-container" onclick="showPage('home')">
+                    <span class="company-name" style="color: white;">DRAGON GEOTECH</span>
+                    <span class="tagline" style="color: #cbd5e0;">Foundation of Strength</span>
+                </div>
+                <p>&copy; 2026 Dragon Geotech. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-        .logo-img {
-            max-height: 60px;
-            width: auto;
-            margin-bottom: 5px;
-        }
+    <!-- PURE VANILLA JAVASCRIPT FOR PAGE NAVIGATION -->
+    <script>
+        function showPage(pageId) {
+            const pages = ['home', 'about', 'services', 'contact'];
+            
+            pages.forEach(id => {
+                const page = document.getElementById('page-' + id);
+                const link = document.getElementById('link-' + id);
+                
+                if (page) page.classList.remove('active');
+                if (link) link.classList.remove('active');
+            });
 
-        .company-name {
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: var(--deep-navy);
-            line-height: 1.1;
-        }
+            const targetPage = document.getElementById('page-' + pageId);
+            const targetLink = document.getElementById('link-' + pageId);
 
-        .tagline {
-            font-size: 0.75rem;
-            color: var(--slate-gray);
-        }
+            if (targetPage) targetPage.classList.add('active');
+            if (targetLink) targetLink.classList.add('active');
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--slate-gray);
-            font-weight: 600; /* Increased weight slightly for Manrope legibility */
-            transition: color 0.3s ease;
-            cursor: pointer;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--accent-orange);
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background-color: var(--deep-navy);
-            color: var(--cool-white);
-            padding: 40px 0;
-            margin-top: auto;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        /* --- HERO SECTION (HOMEPAGE) --- */
-        .hero {
-            background-color: var(--deep-navy);
-            color: var(--cool-white);
-            text-align: center;
-            padding: 120px 20px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            color: var(--cool-white);
-            margin-bottom: 1.5rem;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            max-width: 700px;
-            margin: 0 auto 30px auto;
-            opacity: 0.9;
-        }
-
-        .btn {
-            background-color: var(--accent-orange);
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 4px;
-            font-size: 1.1rem;
-            font-weight: 700; /* Increased weight for buttons */
-            cursor: pointer;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-            display: inline-block;
-        }
-
-        .btn:hover {
-            background-color: #c05621;
-        }
-
-        /* --- ABOUT US SECTION --- */
-        .about-section {
-            background-color: var(--cool-white);
-        }
-
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .bilingual-text p {
-            margin-bottom: 1rem;
-        }
-
-        /* --- SERVICES SECTION --- */
-        .services-section {
-            background-color: var(--deep-navy);
-            color: var(--cool-white);
-        }
-
-        .services-section h2 { color: var(--cool-white); }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .service-card {
-            background-color: rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .service-card h3 {
-            color: var(--accent-orange);
-            margin-bottom: 10px;
-        }
-
-        .service-card p {
-            margin: 0;
-            font-size: 0.95rem;
-            opacity: 0.9;
-        }
-
-        .service-card strong {
-             color: var(--cool-white);
-        }
-
-        /* --- CONTACT / INQUIRY SECTION --- */
-        .contact-section {
-            background-color: var(--cool-white);
-            text-align: center;
-        }
-
-        .contact-options {
-            margin-top: 50px;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            max-width: 600px;
-            margin: 50px auto 0 auto;
-        }
-
-        .contact-box {
-            border: 2px solid #e2e8f0;
-            padding: 40px;
-            border-radius: 8px;
-        }
-
-        .contact-box h3 { color: var(--deep-navy); }
-        .contact-box p { color: var(--slate-gray); margin-bottom: 20px;}
-
-        /* --- PAGE MANAGEMENT STYLES --- */
-        #page-content > div {
-            display: none;
-        }
-
-        #page-content > div.active {
-            display: block;
-        }
-
-    </style>
-</head>
-<body>
-
-    <!-- HEADER & NAVIGATION -->
-    <header>
-        <div class="container">
-            <nav>
-                <!-- LOGO & BRANDING (References Gemini_Generated_Image_aqdw1zaqdw1zaqdw (1) (1).png) -->
-                <a onclick="showPage('home')" class="logo-container">
-                    <img src="Gemini_Generated_Image_aqdw1zaqdw1zaqdw (1) (1).png" alt="Dragon Geotech Logo" class="logo-img">
-                    <span class="company-name">DRAGON GEOTECH</span>
-                    <span class="tagline">FOUNDATION OF STRENGTH</span>
-                </a>
-                
-                <ul class="nav-links">
-                    <li><a onclick="showPage('home')" id="link-home" class="active">Beranda / Home</a></li>
-                    <li><a onclick="showPage('about')" id="link-about">Tentang Kami / About Us</a></li>
-                    <li><a onclick="showPage('services')" id="link-services">Layanan / Services</a></li>
-                    <li><a onclick="showPage('contact')" id="link-contact">Hubungi Ahli / Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- MAIN CONTENT AREA -->
-    <main id="page-content">
-
-        <!-- HOMEPAGE VIEW -->
-        <div id="page-home" class="active">
-            <section class="hero section-padding">
-                <div class="container">
-                    <h1>Ahli Solusi Geoteknik Anda</h1>
-                    <p>Dragon Geotech menyediakan penyelidikan tanah dan pengujian lapangan yang presisi untuk memastikan fondasi yang kokoh untuk proyek konstruksi Anda.</p>
-                    <a onclick="showPage('services')" class="btn">Pelajari Lebih Lanjut</a>
-                </div>
-            </section>
-            
-            <section class="about-section section-padding">
-                <div class="container">
-                    <div class="about-content">
-                        <h2>Mengapa Memilih Kami? / Why Choose Us?</h2>
-                        <div class="bilingual-text">
-                            <p><strong>Akurasi Berbasis Data:</strong> Kami menggunakan standar teknis terkini untuk hasil yang dapat diandalkan. / <strong>Data-Driven Accuracy:</strong> We utilize the latest technical standards for reliable results.</p>
-                            <p><strong>Pendekatan Ilmiah:</strong> Setiap desain didasarkan pada analisis laboratorium dan lapangan yang ketat. / <strong>Scientific Approach:</strong> Every design is based on rigorous lab and field analysis.</p>
-                            <p><strong>Keamanan Konstruksi:</strong> Kami berkomitmen penuh untuk meminimalkan risiko geoteknik di lapangan. / <strong>Construction Safety:</strong> We are fully committed to minimizing geotechnical risks on-site.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- ABOUT US VIEW -->
-        <div id="page-about">
-            <section class="about-section section-padding">
-                <div class="container">
-                    <div class="about-content">
-                        <h2>Tentang Kami / About Us</h2>
-                        <div class="bilingual-text">
-                            <p><strong>Membangun Fondasi Masa Depan yang Kokoh</strong></p>
-                            <p>Kami adalah mitra terpercaya Anda dalam solusi geoteknik yang presisi dan andal. Dengan keahlian mendalam dalam penyelidikan tanah dan pengujian lapangan, kami memastikan setiap proyek konstruksi berdiri di atas dasar yang aman, stabil, dan efisien.</p>
-                            <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
-                            <p><strong>Building a Strong Foundation for the Future</strong></p>
-                            <p>We are your trusted partner in precision geotechnical solutions. With deep expertise in soil investigation and field testing, we ensure that every construction project is built on a foundation that is safe, stable, and efficient.</p>
-                            
-                            <div style="margin-top: 30px;">
-                                <a onclick="showPage('contact')" class="btn">Hubungi Ahli / Contact Expertise</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- SERVICES VIEW -->
-        <div id="page-services">
-            <section class="services-section section-padding">
-                <div class="container">
-                    <div class="text-center">
-                        <h2>Keahlian Kami / Our Expertise</h2>
-                        <p>Kami menyediakan layanan menyeluruh yang mencakup setiap tahapan proyek Anda:</p>
-                        <p>We provide comprehensive services covering every stage of your project:</p>
-                    </div>
-
-                    <div class="services-grid">
-                        <div class="service-card">
-                            <h3>Penyelidikan Tanah (Field Work)</h3>
-                            <p>Pengeboran, Sondir (CPT), SPT, dan pemantauan air tanah untuk data akurat. / <strong>Drilling, CPT, SPT, and groundwater monitoring for accurate data.</strong></p>
-                        </div>
-                        <div class="service-card">
-                            <h3>Pengujian Laboratorium (Laboratory)</h3>
-                            <p>Klasifikasi tanah, uji pemadatan, kekuatan, dan permeabilitas berbasis sains. / <strong>Science-based soil classification, compaction, strength, and permeability testing.</strong></p>
-                        </div>
-                        <div class="service-card">
-                            <h3>Analisis & Desain (Engineering)</h3>
-                            <p>Rekomendasi fondasi, stabilitas lereng, analisis penurunan, dan dinding penahan tanah. / <strong>Foundation recommendations, slope stability, settlement analysis, and retaining wall design.</strong></p>
-                        </div>
-                        <div class="service-card">
-                            <h3>Dukungan Konstruksi (Construction)</h3>
-                            <p>Pengujian beban tiang, pemantauan ekskavasi, dan inspeksi pekerjaan tanah secara intensif. / <strong>Pile load testing, excavation monitoring, and intensive earthwork inspection.</strong></p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- CONTACT / INQUIRY VIEW -->
-        <div id="page-contact">
-            <section class="contact-section section-padding">
-                <div class="container">
-                    <h2>Hubungi Ahli / Contact Expertise</h2>
-                    <p>Silakan isi formulir di bawah ini atau kirimkan pertanyaan langsung kepada kami.</p>
-
-                    <div class="contact-options">
-                        <div class="contact-box">
-                            <h3>Formulir Permintaan Proyek</h3>
-                            <p>Beri tahu kami detail kebutuhan geoteknik Anda melalui Tally.</p>
-                            <a href="https://tally.so/r/eqPoMJ" target="_blank" class="btn">Buka Formulir Tally</a>
-                        </div>
-
-                        <div class="contact-box">
-                            <h3>Kirim Email Langsung</h3>
-                            <p>Atau kirimkan pertanyaan Anda via email.</p>
-                            <a href="mailto:idhamyuwana@gmail.com" class="btn">idhamyuwana@gmail.com</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="logo-container" onclick="showPage('home')">
-                    <span class="company-name" style="color: white;">DRAGON GEOTECH</span>
-                    <span class="tagline" style="color: #cbd5e0;">Foundation of Strength</span>
-                </div>
-                <p>&copy; 2026 Dragon Geotech. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- PURE VANILLA JAVASCRIPT FOR PAGE NAVIGATION -->
-    <script>
-        function showPage(pageId) {
-            const pages = ['home', 'about', 'services', 'contact'];
-            
-            pages.forEach(id => {
-                const page = document.getElementById('page-' + id);
-                const link = document.getElementById('link-' + id);
-                
-                if (page) page.classList.remove('active');
-                if (link) link.classList.remove('active');
-            });
-
-            const targetPage = document.getElementById('page-' + pageId);
-            const targetLink = document.getElementById('link-' + pageId);
-
-            if (targetPage) targetPage.classList.add('active');
-            if (targetLink) targetLink.classList.add('active');
-
-            window.scrollTo(0, 0);
-        }
-   </body>
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
 </html>
