@@ -203,7 +203,7 @@
             margin-bottom: 1rem;
         }
 
-        /* --- SERVICES SECTION --- */
+        /* --- SERVICES SECTION (GLOBAL) --- */
         .services-section {
             background-color: var(--deep-navy);
             color: var(--cool-white);
@@ -239,6 +239,25 @@
 
         .service-card strong {
              color: var(--cool-white);
+        }
+
+        /* --- HOMEPAGE SERVICES SECTION (WHITE THEME) --- */
+        .home-services-section {
+            background-color: var(--cool-white);
+            color: var(--deep-navy);
+        }
+        .home-services-section h2 { color: var(--deep-navy); }
+        .home-services-section .service-card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+        }
+        .home-services-section .service-card h3,
+        .home-services-section .service-card p,
+        .home-services-section .service-card strong {
+            color: var(--deep-navy);
+        }
+        .home-services-section .service-card i {
+            color: var(--deep-navy) !important;
         }
 
         /* --- CONTACT / INQUIRY SECTION --- */
@@ -320,7 +339,7 @@
                 </div>
             </section>
 
-            <section class="services-section section-padding">
+            <section class="home-services-section section-padding">
                 <div class="container">
                     <div class="text-center">
                         <h2>Keahlian Kami / Our Expertise</h2>
@@ -330,25 +349,25 @@
 
                     <div class="services-grid">
                         <div class="service-card">
-                            <i class="fa-solid fa-mountain" style="font-size: 2rem; color: var(--cool-white); margin-bottom: 15px; display: block;"></i>
+                            <i class="fa-solid fa-mountain" style="font-size: 2rem; margin-bottom: 15px; display: block;"></i>
                             <h3>Penyelidikan Tanah (Soil Investigation)</h3>
                             <p>Soil Boring & Drilling,
                             Cone Penetration Testing (CPT/Sondir),
                             Standard Penetration Testing (SPT),
-                            Groundwater Monitoring.</strong></p>
+                            Groundwater Monitoring.</p>
                         </div>
                         <div class="service-card">
-                            <i class="fa-solid fa-flask" style="font-size: 2rem; color: var(--cool-white); margin-bottom: 15px; display: block;"></i>
+                            <i class="fa-solid fa-flask" style="font-size: 2rem; margin-bottom: 15px; display: block;"></i>
                             <h3>Pengujian Laboratorium (Laboratory)</h3>
                             <p>Klasifikasi tanah, uji pemadatan, kekuatan, dan permeabilitas. / <strong>Science-based soil classification, compaction, strength, and permeability testing.</strong></p>
                         </div>
                         <div class="service-card">
-                            <i class="fa-solid fa-compass-drafting" style="font-size: 2rem; color: var(--cool-white); margin-bottom: 15px; display: block;"></i>
+                            <i class="fa-solid fa-compass-drafting" style="font-size: 2rem; margin-bottom: 15px; display: block;"></i>
                             <h3>Analisis & Desain (Engineering)</h3>
                             <p>Rekomendasi fondasi, stabilitas lereng, analisis penurunan, dan dinding penahan tanah. / <strong>Foundation recommendations, slope stability, settlement analysis, and retaining wall design.</strong></p>
                         </div>
                         <div class="service-card">
-                            <i class="fa-solid fa-users-gear" style="font-size: 2rem; color: var(--cool-white); margin-bottom: 15px; display: block;"></i>
+                            <i class="fa-solid fa-users-gear" style="font-size: 2rem; margin-bottom: 15px; display: block;"></i>
                             <h3>Dukungan Konstruksi (Construction)</h3>
                             <p>Pengujian beban tiang, pemantauan ekskavasi, dan inspeksi pekerjaan tanah secara intensif. / <strong>Pile load testing, excavation monitoring, and intensive earthwork inspection.</strong></p>
                         </div>
@@ -394,7 +413,7 @@
                             <p>Soil Boring & Drilling,
                             Cone Penetration Testing (CPT/Sondir),
                             Standard Penetration Testing (SPT),
-                            Groundwater Monitoring.</strong></p>
+                            Groundwater Monitoring.</p>
                         </div>
                         <div class="service-card">
                             <i class="fa-solid fa-flask" style="font-size: 2rem; color: var(--cool-white); margin-bottom: 15px; display: block;"></i>
@@ -477,19 +496,17 @@
         // Header Scroll Logic
         let lastScrollTop = 0;
         const header = document.getElementById('main-header');
-        const scrollThreshold = 50; // Buffer zone to prevent jitter
+        const scrollThreshold = 50; 
 
         window.addEventListener('scroll', function() {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             
-            // If we are near the top, always show the header (prevents jitter)
             if (scrollTop < scrollThreshold) {
                 header.classList.remove('header-hidden');
                 lastScrollTop = scrollTop;
                 return;
             }
 
-            // Otherwise, hide on scroll down, show on scroll up
             if (scrollTop > lastScrollTop) {
                 header.classList.add('header-hidden');
             } else {
