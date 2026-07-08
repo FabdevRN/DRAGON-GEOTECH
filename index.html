@@ -21,8 +21,17 @@
         }
 
         /* --- TIGHTENED GAP SPACING --- */
-        #page-home .about-section { padding-bottom: 20px !important; }
-        #page-home .home-services-section { padding-top: 20px !important; }
+        #page-home .about-section { 
+            padding-bottom: 20px !important; 
+        }
+        
+        #page-home .home-services-section { 
+            padding-top: 20px !important; 
+        }
+
+        .tight-cta-padding { 
+            padding: 10px 0 !important; 
+        }
 
         * {
             box-sizing: border-box;
@@ -38,12 +47,21 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            padding-top: 100px; /* Compensate for fixed header */
+            padding-top: 100px;
         }
 
-        h1, h2 { color: var(--deep-navy); margin-bottom: 1rem; }
-        h2 { font-size: 2.5rem; }
-        p { margin-bottom: 1.5rem; }
+        h1, h2 { 
+            color: var(--deep-navy); 
+            margin-bottom: 1rem; 
+        }
+        
+        h2 { 
+            font-size: 2.5rem; 
+        }
+        
+        p { 
+            margin-bottom: 1.5rem; 
+        }
 
         /* --- UTILITIES --- */
         .container {
@@ -56,7 +74,9 @@
             padding: 80px 0;
         }
 
-        .text-center { text-align: center; }
+        .text-center { 
+            text-align: center; 
+        }
 
         /* --- HEADER / NAV --- */
         header {
@@ -136,7 +156,7 @@
                 gap: 15px;
             }
             body {
-                padding-top: 140px; /* More padding on mobile if header stacks */
+                padding-top: 140px;
             }
         }
 
@@ -213,7 +233,9 @@
             color: var(--cool-white);
         }
 
-        .services-section h2 { color: var(--cool-white); }
+        .services-section h2 { 
+            color: var(--cool-white); 
+        }
 
         .services-grid {
             display: grid;
@@ -250,16 +272,22 @@
             background-color: var(--cool-white);
             color: var(--deep-navy);
         }
-        .home-services-section h2 { color: var(--deep-navy); }
+        
+        .home-services-section h2 { 
+            color: var(--deep-navy); 
+        }
+        
         .home-services-section .service-card {
             background-color: #ffffff;
             border: 1px solid #e2e8f0;
         }
+        
         .home-services-section .service-card h3,
         .home-services-section .service-card p,
         .home-services-section .service-card strong {
             color: var(--deep-navy);
         }
+        
         .home-services-section .service-card i {
             color: var(--deep-navy) !important;
         }
@@ -285,8 +313,14 @@
             border-radius: 8px;
         }
 
-        .contact-box h3 { color: var(--deep-navy); }
-        .contact-box p { color: var(--slate-gray); margin-bottom: 20px;}
+        .contact-box h3 { 
+            color: var(--deep-navy); 
+        }
+        
+        .contact-box p { 
+            color: var(--slate-gray); 
+            margin-bottom: 20px;
+        }
 
         /* --- PAGE MANAGEMENT STYLES --- */
         #page-content > div {
@@ -295,6 +329,11 @@
 
         #page-content > div.active {
             display: block;
+        }
+
+        /* Spacer to push content down if needed */
+        .spacer {
+            height: 20px;
         }
     </style>
 </head>
@@ -379,13 +418,15 @@
                 </div>
             </section>
 
-            <section class="section-padding text-center">
+            <section class="tight-cta-padding text-center">
                 <div class="container">
                     <h2>Kami Siap Membantu!</h2>
                     <p>Jangan Ragu untuk Mengirim Pesan kepada Kami.</p>
                     <a onclick="showPage('contact')" class="btn">Hubungi Kami</a>
                 </div>
             </section>
+
+            <div class="spacer"></div>
         </div>
 
         <div id="page-about">
